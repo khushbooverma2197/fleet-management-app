@@ -4,7 +4,7 @@
 */
 // config
 const STORAGE_KEY = 'fleets_v1';
-const DEFAULT_IMG = 'https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c3d4085d9b3d7e5d1f8e02d8f5b3f2e';
+const DEFAULT_IMG = 'https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png';
 // util storage
 function readFleets(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e){return [];} }
 function writeFleets(arr){ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
