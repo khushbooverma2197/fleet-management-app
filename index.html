@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fleet App — Login</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+<h1>Mini Fleet Management</h1>
+</header>
+<main class="container" style="max-width:520px;">
+<section class="form-section">
+<h2>Login</h2>
+<p style="color:#555;">Use <strong>admin@gmail.com</strong> / <strong>admin1234</strong></p>
+<form id="loginForm">
+<div class="field">
+<label for="email">Email</label>
+<input id="email" type="email" required />
+</div>
+<div class="field">
+<label for="password">Password</label>
+<input id="password" type="password" required />
+</div>
+<div class="actions">
+<button class="btn" type="submit">Login</button>
+</div>
+</form>
+<p id="loginMsg" class="small-note"></p>
+</section>
+</main>
+<script>
+   // simple login - show alert on success then redirect
+   document.getElementById('loginForm').addEventListener('submit', (e) => {
+     e.preventDefault();
+     const email = document.getElementById('email').value.trim();
+     const pass = document.getElementById('password').value;
+     const msg = document.getElementById('loginMsg');
+     if (email === 'admin@gmail.com' && pass === 'admin1234') {
+       alert('Login successful');
+       // small delay so user sees alert and then redirect
+       window.location.href = 'admin.html';
+     } else {
+       msg.textContent = 'Wrong email or password.';
+       msg.style.color = 'crimson';
+     }
+   });
+</script>
+</body>
+</html>
